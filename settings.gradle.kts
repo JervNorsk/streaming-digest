@@ -1,5 +1,5 @@
 with(rootProject) {
-    name = "stream-digest"
+    name = "streaming-digest"
 }
 
 dependencyResolutionManagement {
