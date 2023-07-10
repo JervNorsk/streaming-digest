@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="stream-digest-adapter-video-jvm">
+    <output-path>$PROJECT_DIR$/services/adapters/video/build/libs</output-path>
+    <root id="archive" name="stream-digest-adapter-video-jvm.jar">
+      <element id="module-output" name="stream-digest-adapter-video.jvmMain" />
+    </root>
+  </artifact>
+</component>

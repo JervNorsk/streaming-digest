@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="17">
+      <module name="adapter-video" target="17" />
+      <module name="adapter-video.main" target="17" />
+      <module name="adapter-video.test" target="17" />
+      <module name="stream-digest-adapter-video" target="17" />
+      <module name="stream-digest-adapter-video.main" target="17" />
+      <module name="stream-digest-adapter-video.test" target="17" />
+      <module name="stream-digest-backend" target="17" />
+      <module name="stream-digest-backend.foundation" target="17" />
+      <module name="stream-digest-backend.foundation.main" target="17" />
+      <module name="stream-digest-backend.foundation.test" target="17" />
+      <module name="stream-digest-backend.main" target="17" />
+      <module name="stream-digest-backend.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
