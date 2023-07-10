@@ -1,0 +1,15 @@
+databaseChangeLog:
+  # Property
+  # ---------------------------------------------------------------------------
+  #  - property:
+  #      name: uuid_type
+  #      value: uuid
+  -
+
+  # Include Changelogs
+  # ---------------------------------------------------------------------------
+  - includeAll:
+      filter: io.github.jervnorsk.foundation.services.database.tools.liquibase.LiquibaseIncludeAllFilter
+      path: io/github/jervnorsk
+      errorIfMissingOrEmpty: false
+
