@@ -1,4 +1,4 @@
-package io.github.jervnorsk.projects.streaming.digest.services.adapters.video
+package io.github.jervnorsk.projects.streaming.digest.services.integrations.twitch
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

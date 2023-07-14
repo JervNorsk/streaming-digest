@@ -1,0 +1,74 @@
+spring:
+  webflux:
+    base-path: /
+
+  datasource:
+    url: jdbc:h2:mem:test
+    #url: jdbc:h2:file:/data/h2
+#    url: ${DB_URL:jdbc:${DB_TYPE:h2}:${DB_HOST:file:/data/h2}${DB_PORT:}${DB_SCHEMA:}}
+    username: ${DB_USERNAME:admin}
+    password: ${DB_PASSWORD:admin}
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      naming:
+        physical-strategy: io.github.jervnorsk.foundation.services.database.orm.hibernate.naming.adapters.LiquibaseNamingStrategy
+    show-sql: true
+
+  liquibase:
+    change-log: io/github/jervnorsk/foundation/services/database/tools/liquibase/changelog.yaml
+
+# Authorization code grant flow
+# ----------------------------------------------------------------------------------------------------------------------
+  security:
+    oauth2:
+      client:
+        registration:
+          twitch:
+            client-id: ${TWITCH_CLIENT_ID}
+            client-secret: ${TWITCH_CLIENT_SECRET}
+            client-authentication-method: client_secret_post
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: "user:read:email"
+        provider:
+          twitch:
+            authorization-uri: https://id.twitch.tv/oauth2/authorize
+            token-uri: https://id.twitch.tv/oauth2/token
+            user-info-uri: https://id.twitch.tv/oauth2/userinfo
+            user-name-attribute: preferred_username
+
+
+# Client credentials grant flow
+# ----------------------------------------------------------------------------------------------------------------------
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          twitch:
+#            client-id: ${TWITCH_CLIENT_ID}
+#            client-secret: ${TWITCH_CLIENT_SECRET}
+#            authorization-grant-type: client_credentials
+#        provider:
+#          twitch:
+#            token-uri: https://id.twitch.tv/oauth2/token
+
+springdoc:
+  show-actuator: false
+  webjars:
+    prefix: /docs
+  api-docs:
+    path: /docs/openapi
+  swagger-ui:
+    urls:
+      - url: docs/openapi
+        name: main
+
+logging:
+  level:
+    org.springframework: error
+    org.springframework.security: debug
+
+    io.github.jervnorsk: debug

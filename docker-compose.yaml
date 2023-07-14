@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: jonasal/nginx-certbot
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./.docker/nginx_secrets:/etc/letsencrypt
+      - ./.docker/user_conf.d:/etc/nginx/user_conf.d:ro
+    environment:
+      CERTBOT_EMAIL: jerv.norsk@gmail.com

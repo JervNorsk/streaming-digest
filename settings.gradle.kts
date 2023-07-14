@@ -41,7 +41,7 @@ pluginManagement {
     }
 }
 
-include(":adapter-video")
-project(":adapter-video").apply{
-    projectDir = file("./services/adapters/video")
+include(":integrations:twitch")
+project(":integrations:twitch").apply{
+    projectDir = file("./services/integrations/twitch")
 }

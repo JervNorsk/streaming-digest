@@ -67,8 +67,8 @@ kotlin {
 
                 // Security
                 // ------------------------------------------------------------
-//                implementation("org.springframework.boot:spring-boot-starter-security")
-//                implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
+                implementation("org.springframework.boot:spring-boot-starter-security")
+                implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
 
                 // Datasource
                 // ------------------------------------------------------------
@@ -83,9 +83,9 @@ kotlin {
                 implementation("com.h2database:h2")
 //                implementation("mysql:mysql-connector-java:${extra["mysql.version"]}")
 
-                // DevTools
+                // devtools
                 // ------------------------------------------------------------
-//                implementation("org.springframework.boot:spring-boot-devtools")
+                implementation("org.springframework.boot:spring-boot-devtools")
             }
         }
         val jvmTest by getting {
